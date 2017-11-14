@@ -29,6 +29,8 @@ Once you finish configuring Guest Entries, go to Guest Entries Notification sett
 
 You can add as many notifications you like, by clicking `Add a notification` at the bottom of the table. You can configure the following settings:
 
+| Column | Description |
+| --- | --- |
 | **Enabled?** | Turn notification on / off |
 | **Section** | Select which *Guest Entries* configured section you want to be notified of new entry. It will only display section that has a default author set. |
 | **Emails** | ***Required*** You can enter one or multiple comma-separated email addresses. Each email address will be notified individualy, and in case of failure, the faulty email address will be logged in Craft's logs. |
