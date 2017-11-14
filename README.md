@@ -1,5 +1,5 @@
 ![Logo](resources/icon.svg) 
-# Guest Entries Notification plugin for Craft CMS
+# Guest Entries Notification plugin for Craft CMS ![Craft 2.5](https://img.shields.io/badge/craft-2.5-red.svg?style=flat-square) ![Craft 2.4](https://img.shields.io/badge/craft-2.4-red.svg?style=flat-square)
 
 Extend Pixel &amp; Tonic&rsquo;s [Guest Entries (v1)](https://github.com/craftcms/guest-entries/tree/v1) plugin with email notifications.
 
