@@ -1,5 +1,4 @@
 ![Logo](resources/icon.svg) 
-
 # Guest Entries Notification plugin for Craft CMS
 
 Extend Pixel &amp; Tonic&rsquo;s [Guest Entries (v1)](https://github.com/craftcms/guest-entries/tree/v1) plugin with email notifications.
@@ -27,6 +26,15 @@ I've used the [wbrowar/Craft-Guest-Entries-Email-Notification](https://github.co
 Once you finish configuring Guest Entries, go to Guest Entries Notification settings:
 
 ![Screenshot](resources/screenshots/settings.png)
+
+You can add as many notifications you like, by clicking `Add a notification` at the bottom of the table. You can configure the following settings:
+
+| **Enabled?** | Turn notification on / off |
+| **Section** | Select which *Guest Entries* configured section you want to be notified of new entry. It will only display section that has a default author set. |
+| **Emails** | ***Required*** You can enter one or multiple comma-separated email addresses. Each email address will be notified individualy, and in case of failure, the faulty email address will be logged in Craft's logs. |
+| **Subject** | ***Required*** The email notification subject. The *entry* object is passed and can be used as such: `New Blog Entry: {{ entry.title }}` |
+| **Template Path** | ***Required*** The template path to be used as the body of the email. The *entry* object is passed. |
+| **Format** | Set the email format to either *Plain Text* or *HTML* |
 
 ## Guest Entries Notification Roadmap
 
