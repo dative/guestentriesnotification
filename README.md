@@ -29,7 +29,7 @@ Once you finish configuring Guest Entries, go to Guest Entries Notification sett
 
 You can add as many notifications you like, by clicking `Add a notification` at the bottom of the table. You can configure the following settings:
 
-| Column | Description |
+| Setting | Description |
 | --- | --- |
 | **Enabled?** | Turn notification on / off |
 | **Section** | Select which *Guest Entries* configured section you want to be notified of new entry. It will only display section that has a default author set. |
@@ -42,6 +42,13 @@ You can add as many notifications you like, by clicking `Add a notification` at 
 
 Some things to do, and ideas for potential features:
 
-* Release it
+* Allow email address to be supplied dynamically
+* Improve settings validation that validates if email addresses are valid.
+
+## Guest Entries Notification Changelog
+
+### 1.0
+
+* Initial Release
 
 Brought to you by [Dative, Inc](https://hellodative.com/)
