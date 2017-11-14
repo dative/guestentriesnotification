@@ -1,0 +1,14 @@
+{
+	"name": "dative/guestentriesnotification",
+	"description": "Guest Entries Email Notification",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "Rodrigo Passos",
+			"homepage": "https://hellodative.com/"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

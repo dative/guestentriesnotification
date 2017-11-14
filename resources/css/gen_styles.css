@@ -1,0 +1,28 @@
+/**
+ * Guest Entries Notification plugin for Craft CMS
+ *
+ * Guest Entries Notification CSS
+ *
+ * @author    Rodrigo Passos
+ * @copyright Copyright (c) 2017 Rodrigo Passos
+ * @link      https://hellodative.com/
+ * @package   GuestEntriesNotification
+ * @since     1.0.0
+ */
+
+
+
+.guest-entries-notification table thead tr th:nth-child(3):after,
+.guest-entries-notification table thead tr th:nth-child(4):after,
+.guest-entries-notification table thead tr th:nth-child(5):after {
+  content: ' *';
+  color: #da5a47;
+  display: inline;
+  visibility: visible;
+}
+
+.guest-entries-notification table tbody tr td.has-error textarea {
+  box-shadow: inset -0px -0px 1px 0px #da5a47, 
+              inset 0px 0px 1px 0px #da5a47;
+}
+

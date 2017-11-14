@@ -1,0 +1,102 @@
+{#
+/**
+ * Guest Entries Notification plugin for Craft CMS
+ *
+ * Guest Entries Notification Settings.twig
+ *
+ * @author    Rodrigo Passos
+ * @copyright Copyright (c) 2017 Rodrigo Passos
+ * @link      https://hellodative.com/
+ * @package   GuestEntriesNotification
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% includeCssResource "guestentriesnotification/css/gen_styles.css" %}
+{% includeJsResource "guestentriesnotification/js/gen_scripts.js" %}
+
+{% set tableCols = {
+    isEnabled: {
+      heading: "Enabled?" |t,
+      type: "checkbox",
+      width: 50,
+      class: "gen-field-isEnabled "
+    },
+    section: {
+        heading: "Section" |t,
+        type: "select",
+        width: 150,
+        class: "gen-field-section",
+        options: sections
+    },
+    emails: {
+        heading: "Emails" |t,
+        type: "singleline",
+        class: "gen-field-emails"
+    },
+    subject: {
+      heading: "Subject" |t,
+      type: "singleline",
+      class: "gen-field-subject"
+    },
+    templatePath: {
+        heading: "Template Path" |t,
+        type: "singleline",
+        class: "gen-field-templatePath"
+    },
+    emailFormat: {
+      heading: "Format" |t,
+      type: "select",
+      width: 80,
+      class: "gen-field-emailFormat",
+      options: formats
+    }
+} %}
+
+<div class="guest-entries-notification">
+  <div class="field first">
+    <div class="heading">
+      <label for="organizationOwnerContactPoints">{{ "Notifications"|t}}{% if craft.isLocalized and identity.locale %}<span class="locale">{{ identity.locale }}</span>{% endif %}</label>
+    </div>
+    {{ forms.editableTable({
+        id: 'notificationsTable',
+        name: 'notifications',
+        required: false,
+        addRowLabel: "Add a notification" |t,
+        initJs: false,
+        cols: tableCols,
+        rows: notifications,
+    }) }}
+  </div>
+</div>
+
+{# <script> #}
+{% includejs %}
+(function () {
+
+  var t = new Craft.EditableTable(
+    "{{ 'notificationsTable'   | namespaceInputId   | e('js') }}",
+    "{{ 'notifications' | namespaceInputName | e('js') }}",
+    {{ tableCols|json_encode|raw }}
+  );
+
+  {% if errors | length %}
+    var errors = {{ errors|json_encode|raw }};
+    
+    for (var row in errors) {
+      if (errors.hasOwnProperty(row)) {
+        var tRow  = t.$tbody.find('tr[data-id='+row+']');
+        var rowErrors = errors[row][0];
+        for (var field in rowErrors) {
+          if (rowErrors.hasOwnProperty(field)) {
+            tRow.find('td.gen-field-' + field).addClass('has-error');
+          }
+        }
+      }
+    }
+  {% endif %}
+  
+} ());
+{% endincludejs %}
